@@ -1,0 +1,26 @@
+
+# ??? ??? ?? ??
+#logging.level.hello.springmvc=info
+
+spring:
+  application:
+    name: test
+  profiles:
+    active: dev
+  config:
+    import: "optional:configserver:http://localhost:8070/"
+    name: test
+    profile: dev
+
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+server:
+  port: 9000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
